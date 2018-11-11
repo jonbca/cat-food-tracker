@@ -1,6 +1,3 @@
-/* eslint-disable  func-names */
-/* eslint-disable  no-console */
-
 const Alexa = require('ask-sdk-core');
 
 const LaunchRequestHandler = {
@@ -15,12 +12,13 @@ const LaunchRequestHandler = {
       .reprompt(speechText)
       .withSimpleCard('Hello World', speechText)
       .getResponse();
-  },
+  }
 };
 
 const HelloWorldIntentHandler = {
   canHandle(handlerInput) {
-    return handlerInput.requestEnvelope.request.type === 'IntentRequest'
+    return (
+      handlerInput.requestEnvelope.request.type === 'IntentRequest'
       && handlerInput.requestEnvelope.request.intent.name === 'HelloWorldIntent';
   },
   handle(handlerInput) {
