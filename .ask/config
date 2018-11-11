@@ -13,6 +13,27 @@
             }
           }
         }
+      },
+      "resources": {
+        "manifest": {
+          "eTag": "13ea5fee26343ee19da245ed69693996"
+        },
+        "interactionModel": {
+          "en-GB": {
+            "eTag": "00128f09617d27bb235c95dcd8f388ab"
+          }
+        },
+        "lambda": [
+          {
+            "arn": "arn:aws:lambda:us-east-1:386454917180:function:ask-cli-cat-food-counter",
+            "functionName": "arn:aws:lambda:us-east-1:386454917180:function:ask-cli-cat-food-counter",
+            "awsRegion": "us-east-1",
+            "alexaUsage": [
+              "custom/default"
+            ],
+            "revisionId": "655dbacf-6220-4157-a249-0424b8af42ee"
+          }
+        ]
       }
     }
   }
