@@ -1,0 +1,35 @@
+{
+	"manifest": {
+		"publishingInformation": {
+			"locales": {
+				"en-GB": {
+					"summary": "Track when you need to re-order cat food",
+					"examplePhrases": [
+						"Alexa open cat food tracker"
+					],
+					"name": "cat-food-tracker",
+					"description": "Always running out of cat food? Use the Cat Food Tracker to remind you before you run out."
+				}
+			},
+			"isAvailableWorldwide": true,
+			"testingInstructions": "",
+			"category": "ORGANIZERS_AND_ASSISTANTS",
+			"distributionCountries": []
+		},
+		"apis": {
+			"custom": {
+				"endpoint": {
+          "sourceDir": "lambda/custom"
+				}
+			}
+		},
+		"manifestVersion": "1.0",
+		"privacyAndCompliance": {
+			"allowsPurchases": false,
+			"usesPersonalInfo": false,
+			"isChildDirected": false,
+			"isExportCompliant": true,
+			"containsAds": false
+		}
+	}
+}

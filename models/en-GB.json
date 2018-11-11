@@ -1,0 +1,163 @@
+{
+  "interactionModel": {
+      "languageModel": {
+          "invocationName": "cat food tracker",
+          "intents": [
+              {
+                  "name": "AMAZON.CancelIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.HelpIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.StopIntent",
+                  "samples": []
+              },
+              {
+                  "name": "SetupIntent",
+                  "slots": [
+                      {
+                          "name": "dailyFoodQuantity",
+                          "type": "AMAZON.NUMBER",
+                          "samples": [
+                              "I feed them {dailyFoodQuantity} {dailyWeightUnit} every day",
+                              "I feed them {dailyFoodQuantity} {dailyWeightUnit} each day",
+                              "I feed them {dailyFoodQuantity} {dailyWeightUnit}",
+                              "I feed her {dailyFoodQuantity} {dailyWeightUnit} every day",
+                              "I feed him {dailyFoodQuantity} {dailyWeightUnit} every day",
+                              "I feed her {dailyFoodQuantity} {dailyWeightUnit} each day",
+                              "I feed him {dailyFoodQuantity} {dailyWeightUnit}",
+                              "{dailyFoodQuantity} {dailyWeightUnit}"
+                          ]
+                      },
+                      {
+                          "name": "dailyWeightUnit",
+                          "type": "WEIGHT_UNIT"
+                      },
+                      {
+                          "name": "onHandQuantity",
+                          "type": "AMAZON.NUMBER",
+                          "samples": [
+                              "I've got {onHandQuantity} {onHandWeightUnit}",
+                              "I have {onHandQuantity} {onHandWeightUnit}",
+                              "{onHandQuantity} {onHandWeightUnit}"
+                          ]
+                      },
+                      {
+                          "name": "onHandWeightUnit",
+                          "type": "WEIGHT_UNIT"
+                      }
+                  ],
+                  "samples": [
+                      "My cat eats {dailyFoodQuantity} {dailyWeightUnit} and I have {onHandQuantity} {onHandWeightUnit} on hand."
+                  ]
+              }
+          ],
+          "types": [
+              {
+                  "name": "WEIGHT_UNIT",
+                  "values": [
+                      {
+                          "name": {
+                              "value": "kilogram",
+                              "synonyms": [
+                                  "k. g.",
+                                  "kilos",
+                                  "kilograms"
+                              ]
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "pounds"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "ounces"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "gram"
+                          }
+                      }
+                  ]
+              }
+          ]
+      },
+      "dialog": {
+          "intents": [
+              {
+                  "name": "SetupIntent",
+                  "confirmationRequired": false,
+                  "prompts": {},
+                  "slots": [
+                      {
+                          "name": "dailyFoodQuantity",
+                          "type": "AMAZON.NUMBER",
+                          "confirmationRequired": false,
+                          "elicitationRequired": true,
+                          "prompts": {
+                              "elicitation": "Elicit.Slot.1532643895257.1505812632731"
+                          }
+                      },
+                      {
+                          "name": "dailyWeightUnit",
+                          "type": "WEIGHT_UNIT",
+                          "confirmationRequired": false,
+                          "elicitationRequired": false,
+                          "prompts": {}
+                      },
+                      {
+                          "name": "onHandQuantity",
+                          "type": "AMAZON.NUMBER",
+                          "confirmationRequired": false,
+                          "elicitationRequired": true,
+                          "prompts": {
+                              "elicitation": "Elicit.Slot.1532643895257.1309014155543"
+                          }
+                      },
+                      {
+                          "name": "onHandWeightUnit",
+                          "type": "WEIGHT_UNIT",
+                          "confirmationRequired": false,
+                          "elicitationRequired": false,
+                          "prompts": {}
+                      }
+                  ]
+              }
+          ]
+      },
+      "prompts": [
+          {
+              "id": "Elicit.Slot.1532643895257.1505812632731",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "How much do you feed your cats each day?"
+                  },
+                  {
+                      "type": "PlainText",
+                      "value": "How much do your cats eat each day?"
+                  }
+              ]
+          },
+          {
+              "id": "Elicit.Slot.1532643895257.1309014155543",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "What's the weight of the food you have right now?"
+                  },
+                  {
+                      "type": "PlainText",
+                      "value": "How much food do you currently have?"
+                  }
+              ]
+          }
+      ]
+  }
+}
